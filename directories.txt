@@ -1,0 +1,10 @@
+# モジュール
+modules/iam
+modules/api_gateway
+modules/lambda
+modules/dynamodb
+modules/route53
+modules/s3
+
+# 環境別ディレクトリ
+environments/dev
