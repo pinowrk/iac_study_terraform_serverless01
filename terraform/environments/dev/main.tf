@@ -8,19 +8,19 @@ provider "aws" {
   }
 }
 
-module "dynamodb" {
-  source = "../../modules/dynamodb"
-
-  project     = var.project
-  environment = var.environment
-}
-
 module "iam" {
   source = "../../modules/iam"
 
   project            = var.project
   environment        = var.environment
   dynamodb_table_arn = module.dynamodb.dynamodb_table_arn
+}
+
+module "dynamodb" {
+  source = "../../modules/dynamodb"
+
+  project     = var.project
+  environment = var.environment
 }
 
 module "lambda" {
